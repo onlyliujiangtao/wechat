@@ -1,0 +1,429 @@
+@import "function";
+@import "mixin";
+html {
+    height: 100%;
+    width: 100%;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+@media only screen and (min-width: 401px) {
+    html {
+        font-size: 12.5px !important;
+    }
+}
+
+@media only screen and (min-width: 428px) {
+    html {
+        font-size: 13.25px !important;
+    }
+}
+
+//@media only screen and (min-width: 481px) {
+//  html {
+//    font-size: 15px !important;
+//  }
+//}
+//@media only screen and (min-width: 569px){
+//  html {
+//    font-size: 17.5px !important;
+//  }
+//}
+//@media only screen and (min-width: 641px){
+//  html {
+//    font-size: 20px !important;
+//  }
+//}
+body {
+    // height: 100%;
+    // width: 100%;
+    box-sizing: border-box;
+    font-size: px2rem(12);
+    background-color: #fbf9fe;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+html,
+body,
+ul,
+li,
+dl,
+dt,
+dd,
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #7e8c8d;
+    text-decoration: none;
+    -webkit-backface-visibility: hidden;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+    display: block;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+@media only screen and (min-width: 600px) {
+    //*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+     ::-webkit-scrollbar {
+        width: px2rem(5);
+        height: 0px;
+        background-color: #F5F5F5;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+     ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 px2rem(1) rgba(0, 0, 0, 0);
+        border-radius: px2rem(10);
+        background-color: #F5F5F5;
+    }
+    /*定义滑块 内阴影+圆角*/
+     ::-webkit-scrollbar-thumb {
+        border-radius: px2rem(10);
+        background-color: rgba(85, 85, 85, .5);
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .list-flex-div {
+        display: flex;
+        flex-wrap: wrap;
+        li:nth-child(odd)>div {
+            margin-right: px2rem(2);
+        }
+        li:nth-child(even)>div {
+            margin-left: px2rem(2);
+        }
+    }
+    .list-flex-item {
+        flex: 0 0 50%;
+    }
+    .weui-form-preview__hd:after {
+        height: px2rem(2) !important;
+        border-bottom: px2rem(2) solid #D5D5D6 !important;
+    }
+    .weui-form-preview__btn:after {
+        width: px2rem(2) !important;
+        border-left: px2rem(2) solid #D5D5D6 !important;
+    }
+    .weui-form-preview__ft:after {
+        height: px2rem(2) !important;
+        border-top: px2rem(2) solid #D5D5D6 !important;
+    }
+    .weui-form-preview:before {
+        height: px2rem(0) !important;
+        border-top: px2rem(0) !important;
+    }
+    .vux-form-preview {
+        border: px2rem(1) solid #D5D5D6 !important;
+    }
+    .weui-form-preview:after {
+        height: px2rem(0) !important;
+        border-bottom: px2rem(0) !important;
+    }
+    .weui-grids:before {
+        height: px2rem(2) !important;
+        border-top: px2rem(2) solid #D9D9D9 !important;
+    }
+    .weui-grid:before {
+        width: px2rem(2) !important;
+        border-right: px2rem(2) solid #D9D9D9 !important;
+    }
+    .weui-grid:after {
+        height: px2rem(2) !important;
+        border-bottom: px2rem(2) solid #D9D9D9 !important;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .list-flex-div {
+        display: flex;
+        flex-wrap: wrap;
+        li>div {
+            margin-right: px2rem(4) !important;
+            margin-left: px2rem(0) !important;
+        }
+        li:nth-child(3n+0)>div {
+            margin-right: px2rem(0) !important;
+        }
+    }
+    .list-flex-item {
+        flex: 0 0 33.333%;
+    }
+}
+
+
+/* custom */
+
+//添加弹出框样式
+.pop-add {
+    width: 95%;
+    background-color: #fff;
+    margin: px2rem(48) auto;
+    border-radius: px2rem(5);
+    padding-top: px2rem(10);
+    .pop-header {
+        font-size: px2rem(18);
+    }
+    .pop-button {
+        padding: px2rem(10) px2rem(10);
+    }
+}
+
+//选择框样式
+.checker-item {
+    border: 1px solid #ececec;
+    margin-left: px2rem(10);
+    padding: px2rem(5) px2rem(15);
+    font-size: px2rem(14);
+}
+
+.checker-item-selected {
+    border: 1px solid green;
+}
+
+.m10 {
+    margin: px2rem(10);
+}
+
+.mt10 {
+    margin-top: px2rem(10);
+}
+
+.mb10 {
+    margin-bottom: px2rem(10);
+}
+
+.mb4 {
+    margin-bottom: px2rem(4);
+}
+
+.p10 {
+    padding: px2rem(10);
+}
+
+.pt10 {
+    padding-top: px2rem(10);
+}
+
+.p15 {
+    padding: px2rem(15);
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+.tac {
+    text-align: center;
+}
+
+.tal {
+    text-align: left;
+}
+
+.tar {
+    text-align: right;
+}
+
+.color3 {
+    color: #333 !important;
+}
+
+.color9 {
+    color: #999 !important;
+}
+
+.colord00 {
+    color: #d00;
+}
+
+.color090 {
+    color: #090;
+}
+
+.show {
+    display: block;
+}
+
+.ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.divider,
+.divider-t,
+.divider-b,
+.divider-tb,
+.divider-l,
+.divider-r {
+    position: relative;
+}
+
+.divider {
+    &:before {
+        @include setLine();
+    }
+}
+
+.divider-t {
+    &:before {
+        @include setTopLine();
+    }
+}
+
+.divider-b {
+    &:after {
+        @include setBottomLine();
+    }
+}
+
+.divider-tb {
+    &:before {
+        @include setTopLine();
+    }
+    &:after {
+        @include setBottomLine();
+    }
+}
+
+.divider-l {
+    &:before {
+        @include setLeftLine();
+    }
+}
+
+.divider-r {
+    &:after {
+        @include setRightLine();
+    }
+}
+
+
+/*修改VUX的默认格式*/
+
+.weui-panel__hd {
+    padding: px2rem(14) px2rem(15) px2rem(10) !important;
+    color: #999999 !important;
+    font-size: px2rem(13) !important;
+    position: relative !important;
+}
+
+.vux-header {
+    padding: 0 !important;
+}
+
+.vux-header .vux-header-left,
+.vux-header .vux-header-right {
+    top: px2rem(14) !important;
+}
+
+.vux-header .vux-header-left .left-arrow {
+    position: absolute;
+    width: px2rem(30) !important;
+    height: px2rem(30) !important;
+    top: px2rem(-5) !important;
+    left: px2rem(-5) !important;
+}
+
+.vux-header .vux-header-left .left-arrow:before {
+    width: px2rem(12) !important;
+    height: px2rem(12) !important;
+    top: px2rem(8) !important;
+    left: px2rem(7) !important;
+}
+
+.vux-header .vux-header-left .vux-header-back {
+    padding-left: px2rem(16) !important;
+}
+
+.vux-header .vux-header-left,
+.vux-header .vux-header-right {
+    font-size: px2rem(14) !important;
+    line-height: px2rem(21) !important;
+}
+
+.vux-header .vux-header-title,
+.vux-header h1 {
+    margin: 0 px2rem(88) !important;
+    height: px2rem(46) !important;
+    line-height: px2rem(46) !important;
+    font-size: px2rem(16) !important;
+}
+
+.weui-tab__panel {
+    padding-bottom: 0 !important;
+}
+
+.weui-cells {
+    margin-top: 0 !important;
+    font-size: px2rem(16) !important; //color: #666 !important;
+}
+
+.weui-cell_access .weui-cell__ft:after {
+    height: px2rem(6) !important;
+    width: px2rem(6) !important;
+    border-width: px2rem(2) px2rem(2) 0 0 !important;
+}
+
+.weui-grid {
+    padding: px2rem(20) px2rem(10) !important;
+}
+
+.weui-grid__label {
+    color: #000000;
+    padding-top: px2rem(10);
+    font-size: px2rem(14) !important;
+}
+
+.weui-loadmore_line .weui-loadmore__tips {
+    background-color: transparent !important;
+}

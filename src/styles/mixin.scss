@@ -1,0 +1,154 @@
+@import "function.scss";
+$blue: #3190e8;
+$bc: #e4e4e4;
+$fc:#fff;
+
+// 背景图片地址和大小
+@mixin bis($url) {
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+//定位上下左右居中
+@mixin center {
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: px2rem($width);
+	height: px2rem($height);
+}
+
+//Padding
+@mixin pd($top, $right,$bottom,$left){
+  padding: px2rem($top) px2rem($right) px2rem($bottom) px2rem($left);
+}
+
+//Margin
+@mixin mg($top, $right,$bottom,$left){
+  margin: px2rem($top) px2rem($right) px2rem($bottom) px2rem($left);
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+	font: #{px2rem($size)}/#{px2rem($line-height)} $family;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size: px2rem($size);
+	color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+	display: flex;
+	justify-content: $type;
+
+}
+
+@mixin bg-image($url){
+  background-image: url(#{'./img/'+$url+'@2x.png'});
+  @media(-webkit-min-device-pixel-ratio:3),(min-device-pixel-ratio:3){
+    background-image: url(#{'./img/'+$url+'@3x.png'});
+  }
+}
+
+@mixin setTopLine($c: #E5E5E5) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid $c;
+  color: $c;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+@mixin setBottomLine($c: #E5E5E5) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid $c;
+  color: $c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+@mixin setLeftLine($c: #E5E5E5) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid $c;
+  color: $c;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+@mixin setRightLine($c: #E5E5E5) {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid $c;
+  color: $c;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+
+@mixin setLine($c: #E5E5E5) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  height: 1px;
+  border: 1px solid $c;
+  color: $c;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
