@@ -1,4 +1,4 @@
-# vux-template
+# wechat
 
 > A Vue.js project
 
