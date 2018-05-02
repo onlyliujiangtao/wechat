@@ -20,7 +20,8 @@ module.exports = app => {
     },
     password: {
       type: DataTypes.STRING(32),
-      allowNull: true
+      allowNull: true,
+      defaultValue: '123456'
     },
     created_at: {
       type: DataTypes.DATE,

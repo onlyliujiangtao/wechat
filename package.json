@@ -38,7 +38,7 @@
     "lint": "eslint .",
     "ci": "npm run lint && npm run cov",
     "autod": "autod",
-    "create-model": "egg-sequelize-auto -o './app/model' -d wechat -h localhost -u root -p 3306 -x 123456 -e mysql"
+    "create-model": "egg-sequelize-auto -o ./app/model -d wechat -h localhost -u root -p 3306 -x 123456 -e mysql"
   },
   "ci": {
     "version": "8"

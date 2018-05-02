@@ -15,6 +15,22 @@ $ npm i
 $ npm run dev
 $ open http://localhost:80/
 ```
+### Mysql
+```bash
+根据数据库的表导出model
+$ npm run create-model
+```
+```bash
+根据model创建数据库的表
+./app.js
+module.exports = app => {
+    app.beforeStart(async function() {
+        // 应用会等待这个函数执行完成才启动
+        // await app.model.sync({ force: true }); // 开发环境使用
+        await app.model.sync({});//更具model创建数据库
+    });
+};
+```
 
 ### Deploy
 
