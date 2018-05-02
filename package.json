@@ -1,0 +1,52 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "微信公众号",
+  "private": true,
+  "dependencies": {
+    "bytes": "^3.0.0",
+    "co-wechat-api": "^3.5.0",
+    "egg": "^2.2.1",
+    "egg-mysql": "^3.0.0",
+    "egg-scripts": "^2.5.0",
+    "egg-sequelize": "^3.1.2",
+    "mysql2": "^1.5.3",
+    "mz": "^2.7.0",
+    "sha1": "^1.1.1"
+  },
+  "devDependencies": {
+    "autod": "^3.0.1",
+    "autod-egg": "^1.0.0",
+    "egg-bin": "^4.3.5",
+    "egg-ci": "^1.8.0",
+    "egg-mock": "^3.14.0",
+    "eslint": "^4.11.0",
+    "eslint-config-egg": "^6.0.0",
+    "webstorm-disable-index": "^1.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "scripts": {
+    "start": "egg-scripts start --daemon --title=egg-server-wechat",
+    "stop": "egg-scripts stop --title=egg-server-wechat",
+    "dev": "egg-bin dev --port 80",
+    "debug": "egg-bin debug",
+    "test": "npm run lint -- --fix && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint .",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod",
+    "create-model": "egg-sequelize-auto -o './app/model' -d wechat -h localhost -u root -p 3306 -x 123456 -e mysql"
+  },
+  "ci": {
+    "version": "8"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "onlyliujiangtao@qq.com(刘江涛)",
+  "license": "MIT"
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>用户总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="/public/pkg/layui/css/layui.css" media="all" />
+	<!-- <link rel="stylesheet" href="/public/css/user.css" media="all" /> -->
+	<link rel="stylesheet" href="/public/css/base.css" media="all">
+</head>
+
+<body class="childrenBody">
+	<blockquote class="layui-elem-quote news_search">
+		<div class="layui-form layui-inline">
+			<div class="layui-input-inline">
+				<input type="text" name="name" placeholder="请输入姓名" class="layui-input">
+			</div>
+			<button class="layui-btn search_btn" lay-submit lay-filter="search">
+				<i class="layui-icon">&#xe615;</i>
+				<span>查询</span>
+			</button>
+		</div>
+		<div class="layui-inline" id="add">
+			<button class="layui-btn layui-btn-normal">
+				<i class="layui-icon">&#xe608;</i>
+				<span>添加用户</span>
+			</button>
+		</div>
+		<div class="layui-inline">
+			<button class="layui-btn layui-btn-normal layui-btn-warm" id="modify">
+				<i class="layui-icon">&#xe642;</i>
+				<span>修改用户</span>
+			</button>
+		</div>
+		<div class="layui-inline">
+			<button class="layui-btn layui-btn-danger" id="delete">
+				<i class="layui-icon">&#xe640;</i>
+				<span>批量删除</span>
+			</button>
+		</div>
+	</blockquote>
+	<div class="layui-form">
+		<table class="layui-table" id="user" lay-filter="tbluser"></table>
+	</div>
+	<script type="text/html" id="add-modal">
+		<div class="layui-form p20" lay-filter="edit">
+				<div class="layui-form-item">
+					<label class="layui-form-label">用户名:<em class="col-red">*</em></label>
+					<div class="layui-input-inline">
+						<input type="hidden" value="{{d.data.id}}" name="id" class="layui-input">
+						<input type="text" lay-verify="required" name="user_name" value="{{d.killNull(d.data.user_name)}}"
+								class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">用户姓名:<em class="col-red">*</em></label>
+					<div class="layui-input-inline">
+						<input type="text" lay-verify="required" name="name" value="{{d.killNull(d.data.name)}}"
+								class="layui-input">
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button type="button" class="layui-btn" data-pkid="{{d.data.id}}" lay-submit lay-filter="f-submit">
+							保存
+						</button>
+						<button type="button" class="layui-btn layui-btn-primary layui-layer-close">关闭</button>
+					</div>
+				</div>
+			</div>
+	</script>
+	<script type="text/javascript" src="/public/pkg/layui/layui.js"></script>
+	<script type="text/javascript" src="user.js"></script>
+</body>
+
+</html>

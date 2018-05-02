@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用户总数--layui后台管理模板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/public/pkg/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="/public/css/base.css" media="all">
+    <style>
+        .layui-form-label {
+            width: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+        <div class="layui-inline layui-right">
+            <a class="layui-btn layui-btn-normal" id="modify">修改配置</a>
+        </div>
+    </blockquote>
+    <div class="p20">
+        <blockquote class="layui-elem-quote" style="margin-bottom: 0px;">
+            <span>系统基本参数</span>
+        </blockquote>
+        <table class="layui-table" style="margin-top: 0px;">
+            <colgroup>
+                <col width="150" style="background: #f0f0f0;">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>用户</td>
+                    <td class="name"></td>
+                </tr>
+                <tr>
+                    <td>appId</td>
+                    <td class="appId"></td>
+                </tr>
+                <tr>
+                    <td>appSecret</td>
+                    <td class="appSecret"></td>
+                </tr>
+                <tr>
+                    <td>encodingAESKey</td>
+                    <td class="encodingAESKey"></td>
+                </tr>
+                <tr>
+                    <td>创建时间</td>
+                    <td class="created_at"></td>
+                </tr>
+                <tr>
+                    <td>更新时间</td>
+                    <td class="updated_at"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script type="text/html" id="edit-modal">
+        <div class="layui-form p20" lay-filter="edit">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">appId:<em class="col-red">*</em></label>
+                    <div class="layui-input-inline">
+                        <input type="text" lay-verify="required" name="appId" value="{{d.killNull(d.data.appId)}}"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">appSecret:<em class="col-red">*</em></label>
+                    <div class="layui-input-inline">
+                        <input type="text" lay-verify="required" name="appSecret" value="{{d.killNull(d.data.appSecret)}}"
+                               class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">encodingAESKey:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="encodingAESKey" value="{{d.killNull(d.data.encodingAESKey)}}"
+                               class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button type="button" class="layui-btn" data-pkid="{{d.data.USER_ID}}" lay-submit lay-filter="f-submit">
+                        保存
+                    </button>
+                    <button type="button" class="layui-btn layui-btn-primary layui-layer-close">关闭</button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script type="text/javascript" src="/public/pkg/layui/layui.js"></script>
+    <script type="text/javascript" src="config.js"></script>
+</body>
+
+</html>

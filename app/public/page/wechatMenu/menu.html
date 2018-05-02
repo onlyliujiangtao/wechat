@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>用户总数--layui后台管理模板</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/public/pkg/layui/css/layui.css" media="all" />
+    <link rel="stylesheet" href="/public/css/base.css" media="all" />
+    <link rel="stylesheet" href="/public/css/menu.css" media="all" />
+</head>
+
+<body>
+    <!-- <blockquote class="layui-elem-quote news_search">
+        <p>菜单编辑中</p>
+        <p style="color: #999;">菜单未发布，请确认菜单编辑完成后点击“保存并发布”同步到手机。若停用菜单，请
+            <a href="">点击这里</a>
+        </p>
+    </blockquote> -->
+    <div class="body p10">
+        <div class="layui-inline mobile">
+            <div class="top">
+                <span>咖啡</span>
+            </div>
+            <ul class="menu">
+                <li class="button">
+                    <p>卖卖卖卖</p>
+                    <ul class="sub_menu">
+                        <li class="sub_button">买卖1</li>
+                        <li class="sub_button">买卖1</li>
+                        <li class="sub_button">买卖1</li>
+                    </ul>
+                </li>
+                <li class="button">2</li>
+                <li class="button">3</li>
+            </ul>
+        </div>
+        <div class="layui-inline form">
+            <div class="top">
+                <div class="name left">菜单</div>
+                <a href="javascript:;" class="btn right">删除菜单</a>
+            </div>
+            <div class="form_button" style="display: none;">
+                <p style="line-height: 38px;color:#999;">已添加子菜单，仅可设置菜单名称。</p>
+                <div class="layui-form-item" style="margin-top: 20px;">
+                    <label class="layui-form-label">菜单名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="button" required lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-block">
+                        <div class="layui-form-mid layui-word-aux">字数不超过4个汉字或8个字母</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form_sub_button">
+                <div class="layui-form-item" style="margin-top: 20px;">
+                    <label class="layui-form-label">子菜单名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="button" required lay-verify="required" placeholder="请输入菜单名称" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-input-block">
+                        <div class="layui-form-mid layui-word-aux">字数不超过8个汉字或16个字母</div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">菜单类型</label>
+                    <select class="layui-select" name="type">
+                        <option value="">请选择菜单类型</option>
+                        <option value="click">点击推送信息</option>
+                        <option value="view">点击跳转页面</option>
+                        <option value="scancode_push">调用扫一扫(无提示)</option>
+                        <option value="scancode_waitmsg">调用扫一扫(有提示)</option>
+                        <option value="pic_sysphoto">仅调用相机</option>
+                        <option value="pic_photo_or_album">调用相机或相册</option>
+                        <option value="pic_weixin">调用微信相册</option>
+                        <option value="location_select">上传地理位置</option>
+                        <option value="media_id">获取服务器素材</option>
+                        <option value="view_limited">跳转图文页面</option>
+                    </select>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">key</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">media_id</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">跳转地址</label>
+                    <div class="layui-input-block">
+                        <input type="text" lay-verify="required" class="layui-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="/public/pkg/layui/layui.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+</body>
+
+</html>

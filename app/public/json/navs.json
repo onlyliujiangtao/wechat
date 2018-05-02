@@ -1,0 +1,100 @@
+[{
+	"title" : "主页",
+	"icon" : "icon-computer",
+	"href" : "/public/page/main.html",
+	"spread" : false
+},{
+	"title" : "消息管理",
+	"icon" : "&#xe611;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "关键字回复",
+			"icon" : "&#xe61c;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		},
+		{
+			"title" : "新关注回复",
+			"icon" : "&#xe609;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		}
+	]
+},{
+	"title" : "素材管理",
+	"icon" : "&#xe62e;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "素材列表",
+			"icon" : "&#xe62d;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		}
+	]
+},{
+	"title" : "用户管理",
+	"icon" : "&#xe612;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "用户列表",
+			"icon" : "&#xe62d;",
+			"href" : "/public/page/wechatUser/user.html",
+			"spread" : false
+		},
+		{
+			"title" : "分组管理",
+			"icon" : "&#xe622;",
+			"href" : "/public/page/wechatGroup/group.html",
+			"spread" : false
+		},
+		{
+			"title" : "黑名单管理",
+			"icon" : "&#xe64f;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		}
+	]
+},{
+	"title" : "账户管理",
+	"icon" : "&#xe613;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "生成参数二维码",
+			"icon" : "&#xe61c;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		},
+		{
+			"title" : "长链接转短链接",
+			"icon" : "&#xe61c;",
+			"href" : "/public/page/404.html",
+			"spread" : false
+		}
+	]
+},{
+	"title" : "菜单管理",
+	"icon" : "&#xe64c;",
+	"href" : "",
+	"spread" : false,
+	"children" : [
+		{
+			"title" : "菜单管理",
+			"icon" : "&#xe61c;",
+			"href" : "/public/page/wechatMenu/menu.html"
+		}
+	]
+},
+{
+	"title" : "用户管理",
+	"icon" : "&#xe612;",
+	"href" : "/public/page/user/user.html",
+	"spread" : false
+}]

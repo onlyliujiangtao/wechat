@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>egg-logview</title>
+    <link rel="stylesheet" href="/public/pkg/element-ui/lib/theme-chalk/index.css">
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+            padding: 10px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="app" style="width:100%;height: 100%;">
+      <el-row style="width:100%;height: 100%;">
+        <el-col :span="6" style="height: 100%;">
+            <el-card style="height:100%;background-color:aqua;overflow:auto;" body-style="padding:10px;" >
+                <el-tree
+                  :data="files"
+                  highlight-current="true"
+                  node-key="path"
+                  :default-checked-keys="defaultChecked"
+                  @node-click="selectFile">
+                </el-tree>
+            </el-card>
+        </el-col>
+        <el-col  :span="17"  :offset="1" style="height: 100%">
+          <el-card style="height:100%;overflow:auto;" body-style="padding:10px;" v-loading.body="loading">
+            <pre><p v-for="(item,index) in content.split('\n')" :class="{bgCode:index%2==0}" v-text="item"></p></pre>
+          </el-card>
+        </el-col>
+      </el-row>
+    </div>
+    <script src="/public/pkg/vue/dist/vue.min.js"></script>
+    <script src="/public/pkg/element-ui/lib/index.js"></script>
+    <script src="/public/pkg/axios/dist/axios.min.js"></script>
+    <script>
+      Vue.prototype.$http = axios;
+      axios.defaults.headers.common['Accept'] = 'application/json';
+      axios.interceptors.response.use(function (response) {
+        return response;
+      }, function (error) {
+        error = error.response.data || error;
+        ELEMENT.Message.warning(error.message || error);
+        console.error(error);
+        return Promise.reject(error);
+      });
+    </script>
+    <script>
+      var __logs = '__logs'; //'__logs';
+      var app = new Vue({
+        el: '#app',
+        created: function() {
+          this.listFiles();
+          if (window.location.hash) {
+            this.fetchFile(window.location.hash.substring(1));
+          }
+        },
+        data: function(){
+          return {
+            loading: false,
+            currentFile: {},
+            files: [],
+            defaultChecked: [ window.location.hash.substring(1) ]
+          }
+        },
+        computed: {
+          content: function() {
+            return this.currentFile && this.currentFile.content || '请选择一个文件。';
+          }
+        },
+        methods: {
+          selectFile: function(data) {
+            if (!data.children) {
+              this.fetchFile(data.path);
+            }
+          },
+          listFiles: function() {
+            var vm = this;
+            this.$http.get('/__logs/files').then(function (response) {
+              vm.files = response.data;
+            });
+          },
+          fetchFile: function(file) {
+            var vm = this;
+            vm.loading = true;
+            vm.currentFile = undefined;
+            vm.currentRoute = window.location.hash = file;
+            this.$http.get('__logs/file/' + file)
+            .then(function (response) {
+              vm.currentFile = response.data;
+              vm.loading = false;
+            })
+            .catch(function (error) {
+              vm.loading = false;
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

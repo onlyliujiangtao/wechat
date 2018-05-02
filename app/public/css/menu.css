@@ -1,0 +1,114 @@
+.body .mobile .top{
+    height: 59px;
+    background-image: url('/public/images/bg_mobile_head.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    text-align: center;
+    padding-top: 29px;
+    color: #fff;
+}
+.body .mobile{
+    background-color: #f0f0f0;
+    border: 1px solid #e7e7eb;
+    width: 295.98px;height: 450px;
+    box-sizing: border-box;
+    position: relative;
+}
+.body .mobile .menu{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url('/public/images/bg_mobile_foot.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    padding-left: 41px;
+    box-sizing: border-box;
+}
+.body .mobile .menu .button {
+    height: 38px;
+    line-height: 38px;
+    width: 33.33%;
+    text-align: center;
+    float: left;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    background-color: #fff;
+}
+.body .mobile .menu .button:nth-of-type(2){
+    border-right: solid 1px #e7e7eb;
+    border-left: solid 1px #e7e7eb;
+}
+.sub_menu{
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 1px #d0d0d0;
+    padding: 0 5px;
+    background-color: #fff;
+    color: #353535;
+}
+.sub_menu::after{
+    content: '';
+    clear: both;
+    height: 0;
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    bottom: -5px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 6px;
+    border-style: dashed;
+    border-color: transparent;
+    border-bottom-width: 0;
+    border-top-color: red;
+    border-top-style: solid;
+}
+.sub_menu .sub_button{
+    text-align: center;
+    height: 38px;
+    line-height: 38px;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space:nowrap;
+}
+.sub_menu .sub_button:nth-of-type(2){
+    border-top: solid 1px #d0d0d0;
+    border-bottom: solid 1px #d0d0d0;
+}
+.body .mobile .menu .button.active,.sub_menu .sub_button.active{
+    border: 1px solid #44b549;
+    color: #44b549;
+}
+.sub_button:hover{
+    background-color: #d0d0d0;
+    margin: 0 -5px;
+}
+
+
+.form{
+    margin-left: 20px;
+    border: #d0d0d0 1px solid;
+    width: calc(100% - 295.98px - 40px);
+    height: 450px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+.form .top{
+    height: 44px;
+    width: 100%;
+    line-height: 44px;
+    border-bottom: 1px solid #d0d0d0;
+}
+.form .top .left{
+    float: left;
+}
+.form .top .right{
+    float: right;
+    color: royalblue;
+}
