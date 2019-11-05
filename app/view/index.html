@@ -11,8 +11,9 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="format-detection" content="telephone=no">
 	<link rel="icon" href="/public/favicon.ico">
-	<link rel="stylesheet" href="/public/pkg/layui/css/layui.css" media="all" />
 	<link rel="stylesheet" href="//at.alicdn.com/t/font_tnyc012u2rlwstt9.css" media="all" />
+	<link rel="stylesheet" href="/public/pkg/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="/public/css/base.css" media="all" />
 	<link rel="stylesheet" href="/public/css/main.css" media="all" />
 </head>
 <body class="main_body">
@@ -64,7 +65,7 @@
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;" data-url="/public/page/config/config.html"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>微信配置</cite></a></dd>
-							<dd><a href="javascript:;" data-url="/public/page/user/changePwd.html"><i class="iconfont icon-shezhi1" data-icon="icon-shezhi1"></i><cite>修改密码</cite></a></dd>
+							<dd><a href="javascript:;" id="changePwd"><i class="iconfont icon-shezhi1"></i><cite>修改密码</cite></a></dd>
 							<dd><a href="javascript:;" class="changeSkin"><i class="iconfont icon-huanfu"></i><cite>更换皮肤</cite></a></dd>
 							<dd><a href="javascript:;" class="signOut"><i class="iconfont icon-loginout"></i><cite>退出</cite></a></dd>
 						</dl>
@@ -108,7 +109,36 @@
 			<p>copyright @2018 Hello WeChat</p>
 		</div>
 	</div>
-	
+	<script type="text/html" id="change_pwd">
+		<div class="layui-form p20" lay-filter="edit">
+			<div class="layui-form-item">
+				<label class="layui-form-label">旧密码:<em class="col-red">*</em></label>
+				<div class="layui-input-inline">
+					<input type="text" lay-verify="required" name="pwd" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">新密码:<em class="col-red">*</em></label>
+				<div class="layui-input-inline">
+					<input type="text" lay-verify="required" name="newPwd1" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">新密码:<em class="col-red">*</em></label>
+				<div class="layui-input-inline">
+					<input type="text" lay-verify="required" name="newPwd2" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<div class="layui-input-block">
+					<button type="button" class="layui-btn" data-pkid="{{d.data.id}}" lay-submit lay-filter="f-submit">
+						提交
+					</button>
+					<button type="button" class="layui-btn layui-btn-primary layui-layer-close">关闭</button>
+				</div>
+			</div>
+		</div>
+	</script>
 	<!-- 移动导航 -->
 	<div class="site-tree-mobile layui-hide"><i class="layui-icon">&#xe602;</i></div>
 	<div class="site-mobile-shade"></div>

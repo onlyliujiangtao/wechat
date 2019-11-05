@@ -29,7 +29,11 @@ class WechatController extends Controller {
         const count = user.data.openid.length;
         const openids = user.data.openid.splice(limit * (page - 1), limit);
         const users = await api.batchGetUsers(openids)
-        this.ctx.body = { status: true, count, rows: users.user_info_list };
+        // if (!!users.code) {
+        //     this.ctx.body = { status: false, msg: users.message };
+        // }else{
+        //     this.ctx.body = { status: true, count, rows: users.user_info_list };
+        // }
     }
     /**
      * 获取分组
@@ -37,6 +41,10 @@ class WechatController extends Controller {
     async getGroup() {
         const { limit, page, id } = this.ctx.query;
         const api = await this.ctx.service.wechat.initApi(id);
+        if (!!api.code) {
+            this.ctx.body = { status: false, msg: api.message };
+            return;
+        }
         const group = await api.getGroups();
         const count = group.groups.length;
         let groups = [];

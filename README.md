@@ -23,6 +23,7 @@ $ npm run create-model
 ```bash
 根据model创建数据库的表
 ./app.js
+<code>
 module.exports = app => {
     app.beforeStart(async function() {
         // 应用会等待这个函数执行完成才启动
@@ -30,6 +31,7 @@ module.exports = app => {
         await app.model.sync({});//更具model创建数据库
     });
 };
+</code>
 ```
 
 ### Deploy
@@ -48,5 +50,6 @@ $ npm stop
 
 [egg]: https://eggjs.org
 
-##token
-{"accessToken":"9_YWW3ZAWS2kJv8mqX5qR3blToipy5sUohC8ngqErUwJC6G3VyF_VeMThUDPVq78M0tX6e0fvc4J-qEuKCdO_P07rSigPzzEQTmIGhqeO9MBNJwED48sto9z_ckn_x-j9_qPRlAdVhmhLkZtBwBXUiAHAIEB","expireTime":1524818149730}
+### token
+```bash{"accessToken":"9_YWW3ZAWS2kJv8mqX5qR3blToipy5sUohC8ngqErUwJC6G3VyF_VeMThUDPVq78M0tX6e0fvc4J-qEuKCdO_P07rSigPzzEQTmIGhqeO9MBNJwED48sto9z_ckn_x-j9_qPRlAdVhmhLkZtBwBXUiAHAIEB","expireTime":1524818149730}
+```

@@ -6,9 +6,13 @@ class ConfigController extends Controller {
     async get() {
         const params = this.ctx.request.body;
         try {
-            const config = await this.app.model.Config.find({ where: params });
+            let config = await this.app.model.Config.find({ where: params });
+            if(config == null){
+                config = await this.app.model.Config.create(params);
+            }
             this.ctx.body = { status: true, msg: '', data: config };
         } catch (error) {
+            this.logger.info(error)
             this.ctx.body = {status: false,msg: '服务器错误'};
         }
     }

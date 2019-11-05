@@ -15,11 +15,11 @@ module.exports = app => {
     },
     appId: {
       type: DataTypes.STRING(30),
-      allowNull: false
+      allowNull: true
     },
     appSecret: {
       type: DataTypes.STRING(255),
-      allowNull: false
+      allowNull: true
     },
     token: {
       type: DataTypes.STRING(255),

@@ -17,6 +17,8 @@ module.exports = app => {
   router.get('/login', controller.login.index);
   // 登录
   router.post('/login', controller.login.login);
+  // 修改密码
+  router.post('/login/updatePassword', controller.login.updatePassword);
   // 微信配置管理
   router.post('/config/get',controller.config.get);
   router.post('/config/modify',controller.config.modify);

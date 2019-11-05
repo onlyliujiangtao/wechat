@@ -1,14 +1,16 @@
 layui.config({
     base: '/public/' //假设这是你存放拓展模块的根目录
 }).extend({ //设定模块别名
-    request: 'js/request'
+    request: 'js/request',
+    utils: 'js/utils'
 });
-layui.use(['table', 'jquery', 'form', 'request', 'laytpl'], function () {
+layui.use(['table', 'jquery', 'form', 'request', 'laytpl','utils'], function () {
     var $ = layui.jquery;
     var table = layui.table;
     var form = layui.form;
     var request = layui.request;
     var laytpl = layui.laytpl;
+    var utils = layui.utils;
     var page = {
         killNull: function (res) {
             return res || '';
@@ -23,8 +25,8 @@ layui.use(['table', 'jquery', 'form', 'request', 'laytpl'], function () {
             $('.appId').text(page.killNull(res.data.appId))
             $('.appSecret').text(page.killNull(res.data.appSecret))
             $('.encodingAESKey').text(page.killNull(res.data.encodingAESKey))
-            $('.created_at').text(page.killNull(res.data.created_at))
-            $('.updated_at').text(page.killNull(res.data.updated_at))
+            $('.created_at').text(utils.formatDate(res.data.created_at,'yyyy-MM-dd hh:mm:ss'))
+            $('.updated_at').text(utils.formatDate(res.data.updated_at,'yyyy-MM-dd hh:mm:ss'))
         });
     }
     page.form = function () {

@@ -1,5 +1,5 @@
 'use strict';
-const path = require('path');
+// const path = require('path');
 
 module.exports = appInfo => {
   const config = exports = {};
@@ -12,14 +12,14 @@ module.exports = appInfo => {
 
 
   config.wechat = {
-    token: 'weixinCourse'
-  }
+    token: 'weixinCourse',
+  };
 
   config.security = {
     csrf: {
       enable: false,
-      ignoreJSON: true
-    }
+      ignoreJSON: true,
+    },
   };
 
   config.sequelize = {
@@ -29,7 +29,7 @@ module.exports = appInfo => {
     port: '3306',
     username: 'root',
     password: '123456',
-    timezone: '+08:00' // 东八时区
+    timezone: '+08:00', // 东八时区
   };
 
   return config;

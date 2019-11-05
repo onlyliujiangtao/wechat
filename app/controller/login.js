@@ -21,7 +21,19 @@ class LOGINController extends Controller {
 
   }
   async updatePassword() {
-
+    const query = this.ctx.request.body;
+    const user = await this.app.model.Users.find({where:{id:query.id}});
+    if(user.password==query.pwd){
+      if(query.newPwd1==query.newPwd2){
+        const body = await this.app.model.Users.update({password:query.newPwd1},{where:{id:query.id}});
+        this.logger.info(body);
+        this.ctx.body = {status:true,msg:'修改成功'};
+      }else{
+        this.ctx.body = {status:false,msg:'新密码不一致'};
+      }
+    }else{
+      this.ctx.body = {status:false,msg:'旧密码错误'};
+    }
   }
 }
 
